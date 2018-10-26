@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-
 import 'mint-ui/lib/style.css'
-
 
 Vue.config.productionTip = false
 //5: 设置请求的根路径 
@@ -35,7 +33,32 @@ Vue.filter('dateFormat', function(datestr, pattern = 'YYYY-MM-DD') {
 })
 Vue.http.options.root = 'http://127.0.0.1:3000/';
 Vue.http.options.emulateJSON = true;
+import Vuex from 'vuex' //引入vuex
+Vue.use(Vuex) //注册组件
+// 创建Vuex对象：共享数据，操作方法，获取并监听数据方法
+var store = new Vuex.Store({
+	state: {
+		cartCount: 0
+	}, //共享数据
+	mutations: {
+		increment(state, num) {
+			state.cartCount += num
+		},
+		substract(state) {
+			state.cartCount--
+		},
+		clearcount(state) {
+			state.cartCount = 0
+		}
+	}, //操作共享数据的方法	
+	getters: {
+		optCount: function(state) {
+			return state.cartCount;
+		}
+	} //获取并监听数据方法
+});
 new Vue({
 	router,
-	render: h => h(App)
+	render: h => h(App),
+	store
 }).$mount('#app')

@@ -84,6 +84,8 @@
 			// 	})
 			// },
 			pro_send(){
+				// 修改vuex中共享数据，参数为方法名称
+				this.$store.commit('increment',this.num);
 				var username='匿名用户';
 				this.$http.post('cartlist/add',{
 					wid:this.id,
@@ -116,13 +118,13 @@
 			// this.getImgList();
 			this.$http.get('http://127.0.0.1:3000/products/find?id='+this.$route.params.id).then((res)=>{
 				this.content=res.body;
-				this.imglist[0]={img_url:res.body[0].md1}
-				this.imglist[1]={img_url:res.body[0].md2}
-				this.imglist[2]={img_url:res.body[0].md3}
-				this.imglist[3]={img_url:res.body[0].md4}
+				// this.imglist[0]={img_url:res.body[0].md1}
+				// this.imglist[1]={img_url:res.body[0].md2}
+				// this.imglist[2]={img_url:res.body[0].md3}
+				// this.imglist[3]={img_url:res.body[0].md4}
 				
 			})
-			console.log(this.imglist);
+			// console.log(this.imglist);
 		},
 		components:{
 			// 'swiper':swiper,

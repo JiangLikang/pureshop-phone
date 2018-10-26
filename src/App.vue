@@ -12,10 +12,10 @@
       </router-link>
       <router-link class="mui-tab-item" to="/huiyuan">
         <span class="mui-icon mui-icon-contact"></span>
-        <span class="mui-tab-label">会员</span>
+        <span class="mui-tab-label">我的</span>
       </router-link>
       <router-link class="mui-tab-item" to="/cart">
-        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">{{$store.getters.optCount}}</span></span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
       <router-link class="mui-tab-item" to="/search">

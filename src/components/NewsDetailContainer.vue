@@ -31,7 +31,7 @@
 			var url='newslist/find?id='+this.id;
 			this.$http.get(url).then((res)=>{
 				this.content=res.body.msg;
-				console.log(this.content);
+				// console.log(this.content);
 			});
 		},
 		components:{

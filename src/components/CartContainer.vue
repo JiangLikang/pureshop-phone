@@ -58,7 +58,7 @@
 				this.$http.get('cartlist/list').then((res)=>{
 					// console.log(res);
 					this.list=res.body;
-					console.log(this.list)
+					// console.log(this.list)
 				})
 			}
 		},

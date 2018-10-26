@@ -71,7 +71,7 @@
 			getImgList:function () {
 				var url='http://127.0.0.1:3000/imagelist/list'
 				this.$http.get(url).then((result)=>{
-					console.log(result);
+					// console.log(result);
 					this.list=result.body;
 				})
 			}
